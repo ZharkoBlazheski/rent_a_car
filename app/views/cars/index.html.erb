@@ -10,5 +10,6 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New car", new_car_path %>
+<% if user_signed_in? %>
+  <%= link_to "New car", new_car_path %>
+<% end %>
