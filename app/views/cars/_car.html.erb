@@ -30,6 +30,10 @@
     <strong>Rented by:</strong>
     <%= rented_car(car) %>
   </p>
+  <p>
+    <strong>Rented on:</strong>
+    <%= car.updated_at.strftime("%d/%B/%Y")  %>
+  </p>
   <% end %>
 <hr>
 </div>
