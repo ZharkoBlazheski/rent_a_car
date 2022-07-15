@@ -5,11 +5,5 @@
 <div id="cars">
   <% @cars.each do |car| %>
     <%= render car %>
-    <p>
-      <%= link_to "Show this car", car %>
-    </p>
   <% end %>
 </div>
-<% if user_signed_in? %>
-  <%= link_to "New car", new_car_path %>
-<% end %>

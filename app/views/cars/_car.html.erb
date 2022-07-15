@@ -18,5 +18,18 @@
     <strong>Salon:</strong>
     <%= car.salon %>
   </p>
-
+<% if car.rented.blank? %>
+  <p>
+    <%= form_with model: car do |form| %>
+      <%= form.hidden_field :rented, value: current_user.email %>
+      <%= form.submit "Rent this car!" %>
+    <% end %>
+  </p>
+  <% else %>
+  <p>
+    <strong>Rented by:</strong>
+    <%= rented_car(car) %>
+  </p>
+  <% end %>
+<hr>
 </div>
