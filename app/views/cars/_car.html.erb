@@ -22,7 +22,7 @@
   <p>
     <%= form_with model: car do |form| %>
       <%= form.hidden_field :rented, value: current_user.email %>
-      <%= form.submit "Rent this car!" %>
+      <%= form.submit "Rent this car!", class: "btn btn-green" %>
     <% end %>
   </p>
   <% else %>
@@ -35,5 +35,5 @@
     <%= car.updated_at.strftime("%d/%B/%Y")  %>
   </p>
   <% end %>
-<hr>
+<hr class="my-4">
 </div>
