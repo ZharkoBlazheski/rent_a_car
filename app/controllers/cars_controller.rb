@@ -4,9 +4,13 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.unrented
   end
 
+  def rented_cars
+    # @cars = Car.where(rented: current_user.email)
+    @cars = Car.user_rented(current_user)
+  end
   # GET /cars/1 or /cars/1.json
   def show
   end
