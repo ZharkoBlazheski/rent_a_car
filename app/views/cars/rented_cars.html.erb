@@ -1,5 +1,8 @@
-<div id="<%= dom_id car %>">
-  <p>
+<h1>Your Rented Cars</h1>
+
+<div id="cars">
+  <% @cars.each do |car| %>
+      <p>
     <strong>Make:</strong>
     <%= car.make %>
   </p>
@@ -18,22 +21,19 @@
     <strong>Salon:</strong>
     <%= car.salon %>
   </p>
-<% if car.rented.blank? %>
-  <p>
-    <%= form_with model: car do |form| %>
-      <%= form.hidden_field :rented, value: current_user.email %>
-      <%= form.submit "Rent this car!" %>
-    <% end %>
-  </p>
-  <% else %>
-  <p>
-    <strong>Rented by:</strong>
-    <%= rented_car(car) %>
-  </p>
+
   <p>
     <strong>Rented on:</strong>
     <%= car.updated_at.strftime("%d/%B/%Y")  %>
   </p>
-  <% end %>
+
+  <p>
+    <%= form_with model: car do |form| %>
+      <%= form.hidden_field :rented, value: nil %>
+      <%= form.submit "Return this car!" %>
+    <% end %>
+  </p>
 <hr>
+  <% end %>
 </div>
+
