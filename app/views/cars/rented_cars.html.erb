@@ -30,10 +30,10 @@
   <p>
     <%= form_with model: car do |form| %>
       <%= form.hidden_field :rented, value: nil %>
-      <%= form.submit "Return this car!" %>
+      <%= form.submit "Return this car!", class: "btn btn-red" %>
     <% end %>
   </p>
-<hr>
+<hr class="mb-4 mt-8">
   <% end %>
 </div>
 
