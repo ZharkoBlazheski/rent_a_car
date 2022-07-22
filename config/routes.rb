@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'static/home'
   get 'static/about'
   get 'static/contact'
+  post '/create_contact', to: 'static#create_contact'
+
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
