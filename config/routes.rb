@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'static/home'
+  get 'static/about'
+  get 'static/contact'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
