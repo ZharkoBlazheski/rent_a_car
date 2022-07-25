@@ -1,0 +1,7 @@
+<h1 style="color:blue;">Message</h1>
+<% @messages.each do |message| %>
+<span style="margin-left:2rem;"><%= message.full_name %></span>|
+<span style="margin-left:2rem;"><%= message.email %></span>|
+<span style="margin-left:2rem;"><%= message.message %></span>
+<hr>
+<% end %>

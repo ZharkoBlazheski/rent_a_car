@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
 
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:home, :about, :contact, :create_contact]
 
   def home
   end
@@ -15,10 +15,14 @@ class StaticController < ApplicationController
   def create_contact
     @contact = Contact.new(contact_params)
     if @contact.save
-      redirect_to root_path, notice: "Contact was successfully created."
+      redirect_to static_home_path, notice: "Contact was successfully created."
     else
       render :contact
     end
+  end
+
+  def message
+    @messages = Contact.all
   end
 
   private

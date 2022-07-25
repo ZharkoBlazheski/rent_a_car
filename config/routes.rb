@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'static/home'
   get 'static/about'
   get 'static/contact'
+  get 'static/message'
   post '/create_contact', to: 'static#create_contact'
 
   devise_for :users, controllers: {
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-   root "cars#index"
+   root "static#home"
 end
