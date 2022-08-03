@@ -1,7 +1,9 @@
+<%#= Rails.application.credentials.config[:title][:main_title] %>
+<%#= ENV['MAIN_TITLE'] %>
 <h1 style="color:blue;">Message</h1>
 <% @messages.each do |message| %>
-<span style="margin-left:2rem;"><%= message.full_name %></span>|
-<span style="margin-left:2rem;"><%= message.email %></span>|
-<span style="margin-left:2rem;"><%= message.message %></span>
-<hr>
+    <span class="rounded-sm py-1 px-2 text-xs font-medium text-white bg-blue-600"><%= message.full_name %></span>|
+    <span class="rounded-sm py-1 px-2 text-xs font-medium text-white bg-gray-600"><%= message.email %></span>
+    <span class="rounded-sm py-1 px-2 text-xs font-medium text-white bg-green-600"><%= message.message %></span>
+    <hr>
 <% end %>
