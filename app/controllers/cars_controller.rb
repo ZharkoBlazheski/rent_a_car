@@ -44,7 +44,7 @@ class CarsController < ApplicationController
   def update
     respond_to do |format|
       if @car.update(car_params)
-        UserMailer.rent_a_car_mail(current_user, @car).deliver_now
+        UserMailer.rent_a_car_mail(current_user, @car).deliver_later
         format.html { redirect_to cars_path, notice: "Car was successfully updated." }
         format.json { render :show, status: :ok, location: @car }
       else
