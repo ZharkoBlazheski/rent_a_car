@@ -16,5 +16,10 @@
       <p style="color: green;"><%= notice %></p>
       <p style="color: red;"><%= alert %></p>
         <%= yield %>
+        <script>
+          function dropdownmenu(){
+            document.getElementById("navbar-default").classList.toggle("hidden")
+          }
+        </script>
   </body>
 </html>
